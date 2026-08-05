@@ -41,3 +41,27 @@ myfunc(); //call function
 console.log(typeof(Hero));
 console.log(typeof(MyObj));
 console.log(typeof(myfunc));
+
+//********************** Stack & Heap ************************************/
+
+//in the stack memory the copy of data is passed and all are premitive datatypes are used
+let Myname = "Nitish";
+
+let anotherName = Myname;
+anotherName = "Yadav";
+
+console.log(Myname);
+console.log(anotherName);
+
+
+//in heap meamory the refrence of data is passed and non-premitive datatypes is used
+let UserOne = {
+    Email: "nitish@gmail.com",
+    Num: 7070126532
+}
+
+let SecondUser = UserOne;
+
+SecondUser.Email = "Kuchbhi@gmail.com";
+
+console.log(UserOne);

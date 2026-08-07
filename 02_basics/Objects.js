@@ -104,4 +104,34 @@ let ArrObj = [
 //console.log(Object.entries(ObjUser));
 
 let FirstElement = Object.entries(ObjUser)[0];
-console.log(FirstElement);
+//console.log(FirstElement);
+
+
+// De-Structure of Objects and into of Json--->
+
+let Obj = {
+    name: "Nitish",
+    course: "Chai aur JavaScript",
+    price: 1
+}
+
+console.log(Obj.name);
+
+let {course} = Obj; //avoid obj.course name give the sort name direct acces course 
+let {course : cName} = Obj; // give the sort name for key
+console.log(course); //us de-structure for call value
+console.log(cName); //callinf key using short name 
+
+
+//Json formats-->
+
+// {
+//     "name": "nitish",
+//     "email": "nitish@gmail.com",
+//     "age": 20,
+//     "isloggedin": true
+// }
+
+// [
+//     {}
+// ]

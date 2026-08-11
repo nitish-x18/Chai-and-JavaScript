@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Element Using DOMS</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        color: white;
+    }
+</style>
+<body>
+    
+</body>
+<script>
+    let CreateElement = document.createElement("div");
+    console.log(CreateElement);
+
+    CreateElement.className = "NewDiv";
+    CreateElement.id = Math.ceil(Math.random() * 10 + 1);
+    CreateElement.setAttribute("title", "Creating element");
+    CreateElement.style.color = "black";
+    CreateElement.style.backgroundColor = "yellow";
+    CreateElement.style.padding = "10px";
+    CreateElement.style.borderRadius = "10px";
+
+    // CreateElement.innerHTML = "Hello World!!!"
+    let addtext = document.createTextNode("Hello World!!!");
+    CreateElement.append(addtext);
+
+    document.body.append(CreateElement)
+
+</script>
+</html>

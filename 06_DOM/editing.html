@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+
+    <script>
+
+        function addNewLi(lang){
+            let Newli = document.createElement('li');
+            // Newli.innerHTML = lang;
+            Newli.appendChild(document.createTextNode(lang)); //optimize approach
+            document.querySelector(".language").appendChild(Newli);
+        }
+
+        addNewLi("python");
+        addNewLi("Java");;
+        addNewLi("C++");
+
+        //Edit
+        let sec = document.querySelector("li:nth-child(2)");
+        // sec.innerHTML = "Swift";
+
+        //Edit(optimized approach)
+        let secli = document.createElement('li');
+        secli.textContent = "rust";
+        sec.replaceWith(secli);
+
+        //edit
+        let firstchild = document.querySelector("li:first-child");
+        firstchild.outerHTML = "<li>TypeScript</li>";
+
+        //Remove
+        let lastchild = document.querySelector("li:last-child");
+        lastchild.remove();
+
+    </script>
+</body>
+</html>

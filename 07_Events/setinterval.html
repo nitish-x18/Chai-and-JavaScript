@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetInterval Function</title>
+    <style>
+        body {
+            background-color: black;
+            color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Hello EveryOne...</h2>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+
+        // let print = () => {
+        //     console.log("Hello World", Date.now());
+        // }
+
+        // setInterval(print, 1000)
+
+        let print = (str) => {
+            console.log(str, Date.now());
+        }
+
+        document.querySelector('#start').addEventListener('click', () => {
+            let printing = setInterval(print, 1000, "nitish");
+            console.log('Start Printing');
+
+            document.querySelector('#stop').addEventListener('click', () => {
+                clearInterval(printing);
+                console.log("Stop Printing");
+            })
+        })
+
+        // document.querySelector('#stop').addEventListener('click', () => {
+        //     clearInterval(print);
+        //     console.log("Stop Printing");
+        // })
+
+    </script>
+</body>
+
+</html>

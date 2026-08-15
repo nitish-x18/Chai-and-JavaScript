@@ -1,52 +1,76 @@
-const PromiseOne = new Promise( function(resolve, reject) {
+const PromiseOne = new Promise(function (resolve, reject) {
     //Do async task 
     //DB tasks, Cryptography, Network tasks
 
-    setTimeout( () => {
+    setTimeout(() => {
         console.log('Async task is complete');
         resolve();
-    },1000)
+    }, 1000)
 })
 
-PromiseOne.then( () => {
+PromiseOne.then(() => {
     console.log('Promise Consumed');
 })
 
-new Promise( (resolve, reject) => {
+new Promise((resolve, reject) => {
     setTimeout(() => {
         console.log('Async Task 2 completed');
         resolve();
     }, 2000);
-}).then( () => {
+}).then(() => {
     console.log('Async task 2 resolved');
 })
 
-const PromiseThree = new Promise( (resolve, reject) => {
-    setTimeout( () => {
-        resolve({userName: "Nitish", email: "Chai@gmail.com"})
+const PromiseThree = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve({ userName: "Nitish", email: "Chai@gmail.com" })
     }, 1000)
 })
 
-PromiseThree.then( (user) => {
+PromiseThree.then((user) => {
     console.log(user);
 })
 
-const PromiseFour = new Promise( (resolve, reject) => {
-    let error = false;
-    if(!error){
-        resolve({userName: "Nitish", Pass: 123});
+const PromiseFour = new Promise((resolve, reject) => {
+    let error = true;
+    if (!error) {
+        resolve({ userName: "Nitish", Pass: 123 });
     } else {
         reject('ERROR: Something Went Wrong');
     }
 })
 
-PromiseFour.then( (user) => {
+PromiseFour.then((user) => {
     console.log(user);
     return user.userName;
-}).then( (userName) => {
+}).then((userName) => {
     console.log(userName);
-}).catch( (error) => {
+}).catch((error) => {
     console.log(error)
-}).finally( () => {
+}).finally(() => {
     console.log('Resolve or Reject Something can happen');
 })
+
+
+const PromiseFive = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        let error = false;
+        if (!error) {
+            resolve({ userName: "JavaScript", Pass: 1234 });
+        } else {
+            reject('ERROR: 404')
+        }
+    }, 1000)
+})
+
+async function consumePromiseFive() {
+    try {
+        let response = await PromiseFive;
+        console.log(response);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+consumePromiseFive();
+

@@ -3,7 +3,7 @@ const User = {
     Email: "Nitish@gmail.chai",
     IsLoggedIn: true,
 
-    Getfunc: function(){
+    Getfunc: function () {
         console.log('Hello World');
         console.log(`Welcome, ${this.UserName}`);
     }
@@ -12,7 +12,7 @@ const User = {
 // console.log(User.UserName);
 // console.log(User.Getfunc());
 
-const Users = function(UserName, Email, IsLoggedIn){
+const Users = function (UserName, Email, IsLoggedIn) {
     this.UserName = UserName;
     this.Email = Email;
     this.IsLoggedIn = IsLoggedIn;

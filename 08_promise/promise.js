@@ -74,3 +74,23 @@ async function consumePromiseFive() {
 
 consumePromiseFive();
 
+// let AllUsers = async function () {
+//     try {
+//         const response = await fetch('https://jsonplaceholder.typicode.com/users');
+//         const data = await response.json();
+//         console.log(data);
+//     } catch (error) {
+//         console.log("ERROR: ", error);
+//     }
+// }
+
+// AllUsers();
+
+fetch('https://api.github.com/users/nitish-x18')
+.then( (resolve) => {
+    return resolve.json();
+}).then( (data) => {
+    console.log(data);
+}).catch( (error) => {
+    console.log('ERROR: ', error)
+})
